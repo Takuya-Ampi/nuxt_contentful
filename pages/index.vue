@@ -3,6 +3,7 @@
     <v-flex xs12 sm8 md6>
       <div class="text-xs-center">
         <h1>Hello Nuxtaaaa</h1>
+        <p>staging</p>
       </div>
     </v-flex>
   </v-layout>
