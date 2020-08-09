@@ -1,5 +1,7 @@
 import colors from 'vuetify/es5/util/colors'
 
+require('dotenv').config()
+
 export default {
   /*
    ** Nuxt rendering mode
@@ -38,7 +40,8 @@ export default {
    ** https://nuxtjs.org/guide/plugins
    */
   plugins: [
-    'plugins/vuetify'
+    'plugins/vuetify',
+    'plugins/contentful'
   ],
   /*
    ** Auto import components
@@ -58,7 +61,8 @@ export default {
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/dotenv'
   ],
   /*
    ** Axios module configuration
@@ -96,5 +100,11 @@ export default {
   build: {
     transpile: ['vuetify/lib'],
     extend(config, ctx) {}
-  }
+  },
+  env: {
+    // contentful
+    CTF_SPACE_ID: process.env.CTF_SPACE_ID,
+    CTF_BLOG_POST_TYPE_ID: process.env.CTF_BLOG_POST_TYPE_ID,
+    CTF_CDA_ACCESS_TOKEN: process.env.CTF_CDA_ACCESS_TOKEN
+  },
 }
